@@ -1,6 +1,8 @@
+#coding:utf-8
 import requests
 import csv
 import time
+#  赛道法
 def asyncRequests(s):
     # print("{}------".format(s))
     # url1 = 'https://api.bilibili.com/x/web-interface/newlist?callback=jqueryCallback_bili_982754966250929&rid=32&type=0&pn=1&ps=20&jsonp=jsonp&_=1578307922039'
@@ -13,6 +15,10 @@ def asyncRequests(s):
         'Accept': '*/*',
         'Connection': 'keep-alive'
     }    
+    # proxies = {'https': '14.155.112.17:9000'}
+    # res1 = requests.get(url1, headers = headers, proxies = proxies)
+
+
     res1 = requests.get(url1, headers = headers)
     print(res1.status_code)
 
