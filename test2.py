@@ -14,9 +14,16 @@ async def fetch(url):
         async with session.get(url=url, headers = headers) as response:
             print(response.status)
             text = await response.text()
-            print(text)
+            # print(text)
 if __name__ == "__main__":
-    url1 = 'https://api.bilibili.com/x/web-interface/newlist?callback=jqueryCallback_bili_982754966250929&rid=32&type=0&pn={}&ps=20&jsonp=jsonp&_=1578307922039'.format(1)
- 
+    url1 = 'https://api.bilibili.com/x/web-interface/newlist?callback=jqueryCallback_bili_982754966250929&rid=32&type=0&pn={}&ps=20&jsonp=jsonp&_=1578307922039'
+    url = url1.format(1)
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(fetch(url1))
+    loop.run_until_complete(fetch(url))
+    
+    # tasks = [fetch(url1.format(i)) for i in range(1,201)]
+    # loop = asyncio.get_event_loop()
+    # start_time = time.clock()
+    # loop.run_until_complete(asyncio.wait(tasks))
+    # end_time = time.clock()
+    # print(end_time - start_time)

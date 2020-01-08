@@ -14,7 +14,7 @@ def asyncRequests(s):
         'Connection': 'keep-alive'
     }    
     res1 = requests.get(url1, headers = headers)
-    # print(res1.status_code)
+    print(res1.status_code)
 
 if __name__ == "__main__":
     # url = 'https://www.bilibili.com/v/anime/finish/#/all/default/0/1/'
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     # f = open("data1.txt", 'w')
     # f.write(res1.text)
     start = time.clock()
-    for i in range(200):
+    for i in range(1,2):
         asyncRequests(i)
     end = time.clock()
     print("cost time: ", end - start)
